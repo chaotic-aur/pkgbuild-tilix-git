@@ -36,6 +36,6 @@ build() {
 
 package() {
   cd ${_pkgname}
-  DESTDIR=${pkgdir} meson install -C build
+  DESTDIR=${pkgdir} ninja -C build install
 }
 
