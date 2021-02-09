@@ -31,11 +31,11 @@ pkgver() {
 
 build() {
   arch-meson ${_pkgname} build
-  meson -C build compile
+  meson compile -C build
 }
 
 package() {
   cd ${_pkgname}
-  DESTDIR=${pkgdir} meson -C build install
+  DESTDIR=${pkgdir} meson install -C build
 }
 
